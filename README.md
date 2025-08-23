@@ -1,10 +1,10 @@
 <h1>ReadNest</h1>
-ReadNest é uma API para uma biblioteca virtual feita em Java com Quarkus
-Seu objetivo é simular o cadastro de livros e empréstimo/aluguel dos mesmos.
+ReadNest é uma API para uma biblioteca virtual feita em Java com Quarkus.<br>
+Seu objetivo é simular o cadastro de livros e empréstimo/aluguel dos mesmos.<br><br>
 
 Minha concentração pessoal no desenvolvimento dessa API é trabalhar com o conceito
 de EDD(Event-Driven Development) e dar os primeiros passos com o mesmo, trabalhando
-apenas com o conceito, sem frameworks ou algo que abstraia isso por baixo.
+apenas com o conceito, sem frameworks ou algo que abstraia isso por baixo.<br>
 
 Posteriormente, irei fazer uma refatoração da estrutura para abordagem com Kafka.
 
