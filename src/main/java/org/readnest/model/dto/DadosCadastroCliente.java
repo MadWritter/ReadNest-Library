@@ -19,7 +19,7 @@ public record DadosCadastroCliente(
     @Size(min = 5, max = 15, message = "O usuário deve conter entre 5 e 15 caracteres")
     String usuario,
     @NotBlank(message = "Obrigatório informar a senha")
-    @Size(min = 10, max = 50, message = "A senha deve conter entre 10 e 50 caracteres")
+    @Size(min = 10, message = "A senha deve conter pelo menos 10 caracteres")
     String senha
 
 ) {

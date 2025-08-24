@@ -20,11 +20,11 @@ public class Cliente {
 	private Long id;
 	@Column(nullable = false, length = 50)
 	private String nome;
-	@Column(nullable = false, length = 50)
+	@Column(nullable = false, unique = true, length = 50)
 	private String email;
-	@Column(nullable = false, length = 15)
+	@Column(nullable = false, unique = true, length = 15)
 	private String usuario;
-	@Column(nullable = false, length = 50)
+	@Column(nullable = false)
 	private String senha;
 	@Column(nullable = false)
 	private Boolean status;
@@ -37,8 +37,8 @@ public class Cliente {
 		setStatus(true);
 	}
 
-    public Cliente(DadosCadastroCliente dados) {
-        this(dados.nome(), dados.email(), dados.usuario(), dados.senha());
+    public Cliente(DadosCadastroCliente dados, String senhaCifrada) {
+        this(dados.nome(), dados.email(), dados.usuario(), senhaCifrada);
     }
 
 	public void setNome(String nome) {
@@ -70,6 +70,5 @@ public class Cliente {
 			this.status = status;
 		}
 	}
-
 
 }

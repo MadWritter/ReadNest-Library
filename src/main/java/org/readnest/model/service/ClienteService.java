@@ -6,6 +6,8 @@ import org.readnest.model.dto.DadosCadastroCliente;
 import org.readnest.model.dto.DadosClienteCadastrado;
 import org.readnest.model.entity.Cliente;
 import org.readnest.model.repository.ClienteRepository;
+
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -19,7 +21,8 @@ public class ClienteService {
 
 	@Transactional
     public DadosClienteCadastrado cadastrarCliente(@Valid DadosCadastroCliente dados) {
-        Cliente novoCliente = new Cliente(dados);
+        String senhaCifrada = BCrypt.withDefaults().hashToString(12, dados.senha().toCharArray());
+        Cliente novoCliente = new Cliente(dados, senhaCifrada);
 
         clienteRepository.persist(novoCliente);
 
