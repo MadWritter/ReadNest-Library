@@ -27,14 +27,14 @@ public class Cliente {
 	@Column(nullable = false)
 	private String senha;
 	@Column(nullable = false)
-	private Boolean status;
+	private Boolean ativo;
 
 	public Cliente(String nome, String email, String usuario, String senha) {
 	    setNome(nome);
 		setEmail(email);
 		setUsuario(usuario);
 		setSenha(senha);
-		setStatus(true);
+		setAtivo(true);
 	}
 
     public Cliente(DadosCadastroCliente dados, String senhaCifrada) {
@@ -65,9 +65,9 @@ public class Cliente {
 		}
 	}
 
-	public void setStatus(Boolean status) {
+	public void setAtivo(Boolean status) {
 		if(status != null) {
-			this.status = status;
+			this.ativo = status;
 		}
 	}
 
